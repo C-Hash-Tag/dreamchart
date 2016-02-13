@@ -16,7 +16,7 @@ var React = require('react');
 // Import Shared Components
 
 // Mobile Auto Quote Flow Window Component
-var App = React.createClass({
+var Base = React.createClass({
 
   componentDidMount: function(){
     var self = this;
@@ -31,4 +31,4 @@ var App = React.createClass({
   }
 });
 
-module.exports = App;
+module.exports = Base;

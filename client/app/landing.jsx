@@ -10,7 +10,7 @@
 // Import React and Libraries
 var React = require('react');
 
-var AutoQuoteLanding = React.createClass({
+var Landing = React.createClass({
 
   componentDidMount: function() {
     console.log('whatevs');
@@ -20,7 +20,10 @@ var AutoQuoteLanding = React.createClass({
 
     return (
       <div> a simple div with some content</div>
-    )
+    );
   }
 });
+
+module.exports = Landing;
+
 

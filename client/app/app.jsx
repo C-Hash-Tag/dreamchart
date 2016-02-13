@@ -18,6 +18,9 @@ var Router = ReactRouter.Router;
 // var ReactRedux = require('react-redux');
 // var Provider = ReactRedux.Provider;
 
+console.log(document.getElementById('body-container'));
+
+
 // Redux Simple Router
 
 // Import Route and Store
