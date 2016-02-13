@@ -1,6 +1,6 @@
 /*
 
-  Landing Component
+  Cost Question Component
   ~~~~~~~~~~~~~~~~~~~~~~~
 
 */
@@ -19,7 +19,7 @@ var Landing = React.createClass({
   render: function() {
 
     return (
-      <div> a simple div with some content</div>
+      <div>Simple cost question</div>
     );
   }
 });

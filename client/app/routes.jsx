@@ -9,7 +9,7 @@ var Route = ReactRouter.Route;
 var Redirect = ReactRouter.Redirect;
 
 var routes = (
-  <Route path="/" component={require('./base')}>
+  <Route path="/" component={require('./base/basepath')}>
     <IndexRoute component={require('./landing')} />
   </Route>
 );

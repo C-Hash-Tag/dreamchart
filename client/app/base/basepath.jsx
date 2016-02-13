@@ -1,10 +1,7 @@
 /*
 
-  Auto Quote Flow React App
+  Base Compnent
   ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  This Base component serves as the containing window
-  for the mobile auto quote flow.
 
 */
 
@@ -14,19 +11,23 @@
 var React = require('react');
 
 // Import Shared Components
+var Header = require('./header');
+var Footer = require('./footer');
 
-// Mobile Auto Quote Flow Window Component
 var Base = React.createClass({
 
   componentDidMount: function(){
-    var self = this;
     console.log('component mounts');
   },
 
   render: function() {
 
     return (
-      <div> basic message</div>
+      <div>
+        <Header />
+          {this.props.children}
+        <Footer />
+      </div>
     );
   }
 });
