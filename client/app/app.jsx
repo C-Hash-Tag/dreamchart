@@ -19,15 +19,13 @@ var Router = ReactRouter.Router;
 // var Provider = ReactRedux.Provider;
 
 // Redux Simple Router
-// var syncReduxAndRouter = require('redux-simple-router').syncReduxAndRouter;
 
 // Import Route and Store
-// var store =require('../../../mobile_quote_flow/store/configureStore')();
 var routes = require('./routes');
 var history = require('history').createHistory();
 
 // Hook to sync redux store and the history object
-syncReduxAndRouter(history, store);
+// syncReduxAndRouter(history, store);
 
 var App = React.createClass({
   render: function(){
