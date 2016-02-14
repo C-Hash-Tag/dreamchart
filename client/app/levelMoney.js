@@ -61,7 +61,7 @@ levelMoney.login = function(callback) {
   xhr.setRequestHeader('Accept', 'application/json');
   xhr.onloadend = function() {
       var parsed = JSON.parse(this.response);
-      callback(parsed);
+      callback("some string");
       var pretty = JSON.stringify(parsed, null, 2);
       //document.getElementById('outrpc34').textContent = pretty;
   };

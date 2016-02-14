@@ -13,6 +13,7 @@ var routes = (
     <IndexRoute component={require('./landing')} />
     <Route path="cost-question" component={require('./cost-question')} />
     <Route path="results" component={require('./results')} />
+    <Route path="login" component={require('./login')} />
   </Route>
 );
 
