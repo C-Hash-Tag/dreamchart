@@ -14,7 +14,7 @@ levelMoney.getAll = function(callback) {
   xhr.onerror = function(err) {
       document.getElementById('outrpc28').textContent = "ugh an error. i can't handle this right now.";
   };
-  args = {"args": {"uid":  1110881160, "token":  "A11D023136B7C79B1A323C7D3E3D9A55", "api-token":  "HackathonAPITokenDevweek4222"}};
+  var args = {"args": {"uid":  1110881160, "token":  "A11D023136B7C79B1A323C7D3E3D9A55", "api-token":  "HackathonAPITokenDevweek4222"}};
   xhr.send(JSON.stringify(args));
 };
 
@@ -50,7 +50,7 @@ levelMoney.getProjection = function(callback) {
   xhr.onerror = function(err) {
       document.getElementById('outrpc29').textContent = "ugh an error. i can't handle this right now.";
   };
-  args = {"args": {"uid":  1110881160, "token":  "A11D023136B7C79B1A323C7D3E3D9A55", "api-token":  "HackathonAPITokenDevweek4222"}, "year":  2015, "month":  3};
+  var args = {"args": {"uid":  1110881160, "token":  "A11D023136B7C79B1A323C7D3E3D9A55", "api-token":  "HackathonAPITokenDevweek4222"}, "year":  2015, "month":  3};
   xhr.send(JSON.stringify(args));
 }
 
@@ -61,14 +61,14 @@ levelMoney.login = function(callback) {
   xhr.setRequestHeader('Accept', 'application/json');
   xhr.onloadend = function() {
       var parsed = JSON.parse(this.response);
-      callback("some string");
+      callback(parsed);
       var pretty = JSON.stringify(parsed, null, 2);
       //document.getElementById('outrpc34').textContent = pretty;
   };
   xhr.onerror = function(err) {
       document.getElementById('outrpc34').textContent = "ugh an error. i can't handle this right now.";
   };
-  args = {"email":  "level@example.com", "password":  "incorrect_password", "args": {"uid":  1110881160, "token":  "A11D023136B7C79B1A323C7D3E3D9A55", "api-token":  "HackathonAPITokenDevweek4222"}};
+  var args = {"email":  "level@example.com", "password":  "incorrect_password", "args": {"uid":  1110881160, "token":  "A11D023136B7C79B1A323C7D3E3D9A55", "api-token":  "HackathonAPITokenDevweek4222"}};
   xhr.send(JSON.stringify(args));
 };
 
