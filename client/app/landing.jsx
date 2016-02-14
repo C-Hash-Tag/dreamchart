@@ -19,28 +19,27 @@ var Landing = React.createClass({
   render: function() {
 
     return (
-      <a name="about"></a>
-      <div class="intro-header">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12">
-                      <div class="intro-message">
+      // <a name="about"></a>
+      <div className="intro-header">
+          <div className="container">
+              <div className="row">
+                  <div className="col-lg-12">
+                      <div className="intro-message">
                         <h1>What do you want to save for?</h1>
-                        <hr class="intro-divider">
+                        <hr className="intro-divider"/>
                         <form role="form">
-                          <div class="form-group">
+                          <div className="form-group">
                             <h3 for="usr">Enter the name of the item you want to own in a year:</h3>
-                            <input type="text" class="form-control" id="usr">
+                            <input type="text" className="form-control" id="usr"/>
                           </div>
                         </form>
-                        <div class="container">
-                          <button type="button" class="btn btn-primary">Submit</button>
+                        <div className="container">
+                          <button type="button" className="btn btn-primary">Submit</button>
                         </div>
                       </div>
                   </div>
               </div>
           </div>
-
       </div>
     );
   }

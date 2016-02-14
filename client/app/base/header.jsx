@@ -16,7 +16,7 @@ var Header = React.createClass({
 
     return (
       <section id="header" className="col-md-12">
-        <div id="logo">Fin Lit</div>
+        <div id="logo"></div>
       </section>
     );
   }
