@@ -153,7 +153,6 @@ var Results = React.createClass({
                 <div className="col-lg-12">
                   <HighChart chartData={this.state.chartData}></HighChart>
                 </div>
-
                 <div className="container">
                   <button type="submit" className="btn btn-block btn-success">Increase Your Savings Now!</button>
                 </div>
