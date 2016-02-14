@@ -12,16 +12,9 @@ gulp.task('default', function(){
   var watcher = watchify(bundler);
   console.log("running watcher");
 
-  return watcher.on('update', function() {
-    console.log('updating');
-    return watcher.transform("babelify", {presets: ["es2015", "react"]})
+  return bundler
     .bundle()
     .pipe(source('production.js'))
     .pipe(gulp.dest('client/dist'))
-  })
-  .transform("babelify", {presets: ["es2015", "react"]})
-  .bundle()
-  .pipe(source('production.js'))
-  .pipe(gulp.dest('client/dist'));
-
+  });
 });
