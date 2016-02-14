@@ -18,8 +18,7 @@ var Router = ReactRouter.Router;
 // var ReactRedux = require('react-redux');
 // var Provider = ReactRedux.Provider;
 
-console.log("in the app 3");
-
+console.log("in the app ");
 
 // Redux Simple Router
 

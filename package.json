@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/C-Hash-Tag/financialLiteracy#readme",
   "dependencies": {
+    "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
     "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",
