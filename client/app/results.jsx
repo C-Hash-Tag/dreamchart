@@ -4,12 +4,15 @@
   ~~~~~~~~~~~~~~~~~~~~~~~
 
 */
-var levelMoney = require('./levelMoney');
 
 "use strict";
 
 // Import React and Libraries
 var React = require('react');
+
+// Import Components
+var levelMoney = require('./levelMoney');
+var HighChart = require('./highchart');
 
 var Results = React.createClass({
 
@@ -105,6 +108,9 @@ var Results = React.createClass({
         <div> Average Savings: {this.state.averageSaving} </div>
         <div> Months to Save: {this.state.monthsToSave} </div>
         <div> Yo a simple div with some content</div>
+        <div className="col-lg-12">
+          <HighChart></HighChart>
+        </div>
       </div>
     );
   }
