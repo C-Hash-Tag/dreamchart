@@ -15,7 +15,7 @@ var Header = React.createClass({
   render: function() {
 
     return (
-      <section id="header" className="col-md-12">
+      <section id="header" className="col-md-12 no-min-height">
         <div id="logo"></div>
       </section>
     );

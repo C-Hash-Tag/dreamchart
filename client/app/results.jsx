@@ -103,13 +103,23 @@ var Results = React.createClass({
   render: function() {
     console.log("in render");
     return (
-      <div>
-        <div> Current Balance: {this.state.currBal} </div>
-        <div> Average Savings: {this.state.averageSaving} </div>
-        <div> Months to Save: {this.state.monthsToSave} </div>
-        <div> Yo a simple div with some content</div>
-        <div className="col-lg-12">
-          <HighChart></HighChart>
+      <div className="intro-header">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 no-padding">
+              <div className="intro-message">
+                <div> Current Balance: {this.state.currBal} </div>
+                <div> Average Savings: {this.state.averageSaving} </div>
+                <div> Months to Save: {this.state.monthsToSave} </div>
+                <div> Yo a simple div with some content</div>
+                <h1>You Can Do It!</h1>
+                <hr className="intro-divider"/>
+                <div className="col-lg-12">
+                  <HighChart></HighChart>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

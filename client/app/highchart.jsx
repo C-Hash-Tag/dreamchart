@@ -7,25 +7,55 @@ window.Highcharts = require('highcharts');
 var ReactHighcharts = require('react-highcharts/bundle/ReactHighcharts');
 
 var config = {
-  title: {
-            text: 'Progress to Goal'
+        chart: {
+          backgroundColor: 'rgba(255,255,255,0.002)'
+        },
+        legend: {
+          itemStyle: {
+            color: '#ffffff'
+          }
+        },
+        title: {
+          text: 'Progress to your ' + window.localStorage.goalName,
+          style: {
+            color: '#ffffff'
+          }
         },
         subtitle: {
-            text: 'Source: Level Money API'
+            text: 'Source: Level Money API',
+            style: {
+              color: '#b3b3b3'
+            }
         },
         xAxis: {
-            type: 'datetime',
-            allowDecimals: false
+          type: 'datetime',
+          allowDecimals: false,
+          title: {
+            style: {
+              color: '#ffffff'
+            }
+          },
+          labels: {
+            style: {
+              color: '#ffffff'
+            }
+          }
         },
         yAxis: {
-            title: {
-                text: 'Money'
+          title: {
+            style: {
+              color: '#ffffff'
             },
-            labels: {
-                formatter: function () {
-                    return '$' + this.value;
-                }
+            text: 'Money'
+          },
+          labels: {
+            style: {
+              color: '#ffffff'
+            },
+            formatter: function () {
+              return '$' + this.value;
             }
+          }
         },
         tooltip: {
             formatter: function() {
@@ -55,6 +85,7 @@ var config = {
             }
         },
         series: [{
+            color: '#ffffff',
         		type: 'areaspline',
             data: [[]],
             name: 'Accumulated Savings',

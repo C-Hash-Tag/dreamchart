@@ -43,7 +43,7 @@ var CostQuestion = React.createClass({
       <div className="intro-header">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12">
+            <div className="col-lg-12" id="no-padding">
               <div className="intro-message">
                 <h1>How much would it cost?</h1>
                 <hr className="intro-divider"/>

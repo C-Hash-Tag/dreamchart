@@ -168,6 +168,18 @@ footer {
     background-color: #f8f8f8;
 }
 
+.no-padding {
+    padding: 0px;
+}
+
+.intro-message {
+    margin-top: -150px;
+}
+
+.no-min-height {
+    min-height: 0px;
+}
+
 p.copyright {
     margin: 15px 0 0;
 }
