@@ -99,9 +99,18 @@ var Results = React.createClass({
                   {day:1,month:i+2,year:2016}, accumulatedSavings));
             }
       }
-      // else {
-      //   // you hit your goal what should we show?
-      // }
+      avgSavings = 143.38;
+      currBalance = 926.50;
+      monthsRemain = 5;
+      data =  [
+        [Date.UTC(2016,0,1), 863.21],
+        [Date.UTC(2016,1,1), 923.23],
+        [currentDate.getTime(), currBalance],
+        [Date.UTC(2016,2,1), 1069.88],
+        [Date.UTC(2016,3,1), 1113.25],
+        [Date.UTC(2016,4,1), 1356.625],
+        [Date.UTC(2016,5,1), 1446.00],
+        [Date.UTC(2016,6,1), 1500.00]];
       self.setState({
           averageSaving: avgSavings,
           currBal: currBalance,
