@@ -17,17 +17,24 @@ var CostQuestion = React.createClass({
     console.log('cost-question');
   },
 
-  addCost: function() {
+  getInitialState: function() {
+    return {
+      goalCost: ""
+    }
+  },
+
+  addCost: function(event) {
     console.log("cost update");
     var goalCost = event.target.value;
     this.setState({goalCost: goalCost});
     window.localStorage.goalCost = goalCost;
   },
 
-  submitCost: function() {
+  submitCost: function(event) {
+    console.log("cost submitted...");
     event.preventDefault();
     console.log("submitted Cost");
-    browserHistory.push('/results');
+    browserHistory.push('results');
   },
 
   render: function() {
@@ -42,10 +49,10 @@ var CostQuestion = React.createClass({
                 <hr className="intro-divider"/>
                 <form role="form" onSubmit={this.submitCost}>
                   <div className="form-group">
-                    <input type="text" className="form-control" id="usr" value={this.state.cost} onChange={this.addCost} placeholder="Enter in USD"/>
+                    <input type="text" className="form-control" value={this.state.goalCost} onChange={this.addCost} placeholder="Enter in USD"/>
                   </div>
                   <div className="container">
-                    <button type="button" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                   </div>
                 </form>
               </div>

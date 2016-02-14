@@ -32,7 +32,7 @@ var Landing = React.createClass({
   submitGoal: function(event) {
     event.preventDefault();
     console.log("submitting!");
-    browserHistory.push('/cost-question');
+    browserHistory.push('cost-question');
   },
 
   render: function() {
@@ -48,10 +48,10 @@ var Landing = React.createClass({
                 <form role="form" onSubmit={this.submitGoal}>
                   <div className="form-group">
                     <h3>Enter the name of the item you want to own in a year:</h3>
-                    <input type="text" className="form-control" id="usr" value={this.state.goalName} onChange={this.addGoal}/>
+                    <input type="text" className="form-control" value={this.state.goalName} onChange={this.addGoal}/>
                   </div>
                   <div className="container">
-                    <button className="btn btn-primary white">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                   </div>
                 </form>
               </div>
