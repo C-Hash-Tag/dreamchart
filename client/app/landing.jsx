@@ -9,6 +9,7 @@
 
 // Import React and Libraries
 var React = require('react');
+var HighChart = require('./highchart');
 
 var Landing = React.createClass({
 
@@ -29,7 +30,7 @@ var Landing = React.createClass({
                         <hr className="intro-divider"/>
                         <form role="form">
                           <div className="form-group">
-                            <h3 for="usr">Enter the name of the item you want to own in a year:</h3>
+                            <h3 htmlFor="usr">Enter the name of the item you want to own in a year:</h3>
                             <input type="text" className="form-control" id="usr"/>
                           </div>
                         </form>
@@ -37,6 +38,11 @@ var Landing = React.createClass({
                           <button type="button" className="btn btn-primary">Submit</button>
                         </div>
                       </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <HighChart></HighChart>
+                    </div>
                   </div>
               </div>
           </div>
