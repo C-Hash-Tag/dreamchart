@@ -149,7 +149,8 @@ h6 {
 @media(max-width:767px) {
 
     .intro-header{
-        padding: 50% 0;
+      padding: 50% 0;
+      background: url(../img/intro-bg.jpg) no-repeat center center;
     }
 
     .banner h2 {
