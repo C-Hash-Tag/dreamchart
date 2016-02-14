@@ -103,22 +103,15 @@ var config = {
 var HighChart = React.createClass({
     componentDidMount: function() {
         console.log('highchart mounted');
-        let chart = this.refs.chart.getChart();
-        // let newData = [20,20,40,35,65,65,85,100];
-        let today = new Date();
-        let newData = [
-            [Date.UTC(2016,0,1), 20],
-            [Date.UTC(2016,1,1), 35],
-            [today.getTime(), 45],
-            [Date.UTC(2016,2,1), 40],
-            [Date.UTC(2016,3,1), 65],
-            [Date.UTC(2016,4,1), 65],
-            [Date.UTC(2016,5,1), 85],
-            [Date.UTC(2016,6,1), 100]];
-            chart.series[0].setData(newData);
+
         },
     render: function() {
         console.log('highcharts render');
+        config.series.data = this.props.chartData;
+        let chart = this.refs.chart;
+        if(chart != null){
+            chart.getChart().series[0].setData(this.props.chartData);
+        }
         return (<ReactHighcharts config = {config} ref="chart"></ReactHighcharts>);
     }
 });
