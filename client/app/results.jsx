@@ -55,7 +55,7 @@ var Results = React.createClass({
       var balanceOnMonthStart;
       var balanceOnMonthEnd;
       var currBalance;
-
+      var goal = window.localStorage.goalCost;
       var avgSavings;
       var monthsRemain;
       var accumulatedSavings = 0;
@@ -87,7 +87,7 @@ var Results = React.createClass({
           console.log("current day balance", balance);
           accumulatedSavings = balance;
           currBalance = balance;
-          monthsRemain = self.getMonthsRemaining(9500, balance, avgSavings);
+          monthsRemain = self.getMonthsRemaining(goal, balance, avgSavings);
           data.push(dateArr(item.day, accumulatedSavings));
         }
       });
@@ -139,8 +139,8 @@ var Results = React.createClass({
           <div className="row">
             <div className="col-lg-12 no-padding">
               <div className="intro-message">
-                <div> Current Balance: {this.state.currBal} </div>
-                <div> Average Savings: {this.state.averageSaving} </div>
+                <div> Current Balance: ${this.state.currBal} </div>
+                <div> Average Savings: ${this.state.averageSaving} </div>
                 <div> Months to Save: {this.state.monthsToSave} </div>
                 <div> Yo a simple div with some content</div>
                 <h1>You Can Do It!</h1>
