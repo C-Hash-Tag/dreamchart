@@ -13,7 +13,7 @@ var React = require('react');
 var Landing = React.createClass({
 
   componentDidMount: function() {
-    console.log('whatevs');
+    console.log('cost-question');
   },
 
   render: function() {

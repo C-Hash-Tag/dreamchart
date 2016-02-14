@@ -20,7 +20,6 @@ var Router = ReactRouter.Router;
 
 console.log("in the app 5");
 
-
 // Redux Simple Router
 
 // Import Route and Store
