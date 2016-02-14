@@ -9,6 +9,7 @@
 
 // Import React and Libraries
 var React = require('react');
+var HighChart = require('./highchart');
 
 // Import Components
 var levelMoney = require('./levelMoney');
@@ -20,13 +21,13 @@ var Results = React.createClass({
     console.log('results');
     console.log("levelMoney",levelMoney);
     this.getCurrentBalance();
-
   },
   getInitialState: function() {
     return {
       currBal: 0,
       averageSaving: 0,
       monthsToSave: 0,
+      charData: [[]]
     }
   },
 
@@ -42,60 +43,90 @@ var Results = React.createClass({
     var curr = 0;
     var self = this;
     var flag = true;
-    var currentDate = new Date();
-    currentDate = currentDate.toString().slice(7,10);
+    let currentDate = new Date();
+    // currentDate = currentDate.toString().slice(7,10);
     levelMoney.getHist(function(res){
-
+      var convertCentoCents = function(toDollars){
+        return toDollars / (100 * 100);
+      }
+      var dateArr = function (date, amount){
+        return [Date.UTC(date.year,date.month-1,date.day), parseFloat(amount.toFixed(2))];
+      }
       var balanceOnMonthStart;
       var balanceOnMonthEnd;
+      var currBalance;
 
-      res.days.filter(function(item){
+      var avgSavings;
+      var monthsRemain;
+      var accumulatedSavings = 0;
+
+      var data = []
+      res.days.forEach(function(item){
         //get current balance
-        if (item.day.day == currentDate && item.day.month === 2) {
-          console.log("item",item.balance);
-          self.setState({currBal: item.balance/10000});
-          console.log("Success", self.state.currBal);
-          self.getMonthsRemaining(9500);
-        }
+        var balance = convertCentoCents(item.balance);
 
-        //get average saving
         if (item.day.day == 1 && item.day.month == 1){
-          balanceOnMonthStart = item.balance/10000;
+          balanceOnMonthStart = balance;
+          // accumulatedSavings = balanceOnMonthStart;
+          data.push(dateArr(item.day, balanceOnMonthStart));
         }
 
         if (item.day.day == 31 && item.day.month == 1){
-          balanceOnMonthEnd = item.balance/10000;
+          balanceOnMonthEnd = balance;
+          data.push(dateArr(item.day, balanceOnMonthEnd));
         }
 
         if(balanceOnMonthEnd !== undefined && balanceOnMonthStart !== undefined && flag){
           flag = false;
-          self.setState({averageSaving: (balanceOnMonthEnd-balanceOnMonthStart).toFixed(2)});
-          console.log(self.state.averageSaving, "averageSaving NOW");
-          //console.log("self", self);
-          //self.getMonthsRemaining(9500);
-          //console.log("only one of me");
+          avgSavings = (balanceOnMonthEnd - balanceOnMonthStart).toFixed(2);
+          console.log(avgSavings, " averageSaving NOW");
         }
 
-
-
-      })
+        if (item.day.day == currentDate.getDate() &&
+          item.day.month === currentDate.getMonth() + 1) {
+          console.log("current day balance", balance);
+          accumulatedSavings = balance;
+          currBalance = balance;
+          monthsRemain = self.getMonthsRemaining(9500, balance, avgSavings);
+          data.push(dateArr(item.day, accumulatedSavings));
+        }
+      });
+      if(monthsRemain > 0){
+          for(var i = 1; i <= monthsRemain; i++){
+              accumulatedSavings += parseFloat(avgSavings);
+              data.push(
+                dateArr(
+                  {day:1,month:i+2,year:2016}, accumulatedSavings));
+            }
+      }
+      // else {
+      //   // you hit your goal what should we show?
+      // }
+      self.setState({
+          averageSaving: avgSavings,
+          currBal: currBalance,
+          monthsToSave: monthsRemain,
+          chartData: data
+        });
     });
 
   },
-  getMonthsRemaining: function(goal) {
-
+  getMonthsRemaining: function(goal, bal, avg) {
     var needMoney;
-    if (goal > this.state.currBal) {
-      var bal = this.state.currBal;
+    if(bal == null || bal === 0 || avg == null || avg === 0){
+      return 0;
+    }
+    if (goal > bal) {
       console.log("bal", bal);
-      needMoney = goal - this.state.currBal;
+      needMoney = goal - bal;
       console.log("needMoney", needMoney);
-      var totalMonths = Math.ceil(needMoney/this.state.averageSaving);
+      var totalMonths = Math.ceil(needMoney / avg);
       console.log("totalMonths", totalMonths);
-      this.setState({monthsToSave: totalMonths});
+      return totalMonths;
     }
     else {
-      needMoney = this.state.currBal - goal;
+      needMoney = bal - goal;
+      return 0;
     }
 
   },
@@ -115,7 +146,7 @@ var Results = React.createClass({
                 <h1>You Can Do It!</h1>
                 <hr className="intro-divider"/>
                 <div className="col-lg-12">
-                  <HighChart></HighChart>
+                  <HighChart chartData={this.state.chartData}></HighChart>
                 </div>
               </div>
             </div>
