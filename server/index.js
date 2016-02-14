@@ -47,11 +47,12 @@ app.use(express.static(path.join(__dirname, "../client/dist")));
 //   });
 // });
 
-// app.get('/json/posts/', function(req, res) {
-//   fs.readFile("server/source_data/posts.json", function(err, data) {
-//     res.send(data);
-//   });
-// });
+
+app.get('api/data', function(req, res) {
+  fetch()
+})
+
+
 
 // app.get('/json/projects/', function(req, res) {
 //   fs.readFile("server/source_data/projects.json", function(err, data) {

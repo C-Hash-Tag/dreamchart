@@ -15,6 +15,7 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var browserHistory = require('react-router').browserHistory;
 
+
 console.log("in the app ");
 
 // Redux Simple Router

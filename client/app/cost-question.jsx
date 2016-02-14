@@ -10,10 +10,10 @@
 // Import React and Libraries
 var React = require('react');
 
-var Landing = React.createClass({
+var CostQuestion = React.createClass({
 
   componentDidMount: function() {
-    console.log('cost-question1111');
+    console.log('cost-question');
   },
 
   render: function() {
@@ -43,4 +43,4 @@ var Landing = React.createClass({
   }
 });
 
-module.exports = Landing;
+module.exports = CostQuestion;
