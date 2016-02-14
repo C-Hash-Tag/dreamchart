@@ -13,10 +13,7 @@ var ReactDOM = require('react-dom');
 // React Router
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
-
-// React Redux
-// var ReactRedux = require('react-redux');
-// var Provider = ReactRedux.Provider;
+var browserHistory = require('react-router').browserHistory;
 
 console.log("in the app ");
 
@@ -24,7 +21,6 @@ console.log("in the app ");
 
 // Import Route and Store
 var routes = require('./routes');
-var history = require('history').createHistory();
 
 // Hook to sync redux store and the history object
 // syncReduxAndRouter(history, store);
@@ -32,7 +28,7 @@ var history = require('history').createHistory();
 var App = React.createClass({
   render: function(){
     return (
-      <Router history={history}>
+      <Router history={browserHistory}>
         {routes}
       </Router>
     );
