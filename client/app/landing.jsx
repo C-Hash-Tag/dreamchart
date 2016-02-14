@@ -43,12 +43,11 @@ var Landing = React.createClass({
           <div className="row">
             <div className="col-lg-12">
               <div className="intro-message">
-                <h1>What do you want to save for?</h1>
+                <h1>What are you saving for?</h1>
                 <hr className="intro-divider"/>
                 <form role="form" onSubmit={this.submitGoal}>
                   <div className="form-group">
-                    <h3>Enter the name of the item you want to own in a year:</h3>
-                    <input type="text" className="form-control" value={this.state.goalName} onChange={this.addGoal}/>
+                    <input type="text" className="form-control" value={this.state.goalName} onChange={this.addGoal} placeholder="Goal Item"/>
                   </div>
                   <button type="submit" className="btn btn-block btn-success">Submit</button>
                 </form>

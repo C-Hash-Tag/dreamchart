@@ -110,7 +110,8 @@ var HighChart = React.createClass({
         config.series.data = this.props.chartData;
         let chart = this.refs.chart;
         if(chart != null){
-            chart.getChart().series[0].setData(this.props.chartData);
+          chart.getChart().series[0].setData(this.props.chartData);
+          chart.getChart().setTitle({text: 'Progress to your '+window.localStorage.goalName});
         }
         return (<ReactHighcharts config = {config} ref="chart"></ReactHighcharts>);
     }
