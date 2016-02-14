@@ -13,13 +13,34 @@ var React = require('react');
 var Landing = React.createClass({
 
   componentDidMount: function() {
-    console.log('whatevs');
+    console.log('yoyoyo');
   },
 
   render: function() {
 
     return (
-      <div> a simple div with some content222</div>
+      // <a name="about"></a>
+      <div className="intro-header">
+          <div className="container">
+              <div className="row">
+                  <div className="col-lg-12">
+                      <div className="intro-message">
+                        <h1>What do you want to save for?</h1>
+                        <hr className="intro-divider"/>
+                        <form role="form">
+                          <div className="form-group">
+                            <h3 for="usr">Enter the name of the item you want to own in a year:</h3>
+                            <input type="text" className="form-control" id="usr"/>
+                          </div>
+                        </form>
+                        <div className="container">
+                          <button type="button" className="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
     );
   }
 });
