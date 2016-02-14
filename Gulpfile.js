@@ -5,10 +5,17 @@ const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const watchify = require('watchify');
-
+const bConfig = {
+	entries: 'client/app/app.jsx',
+	extensions: ['.jsx'],
+	debug: true,
+	cache: {},
+	packageCache: {},
+	fullPaths: true
+};
 gulp.task('default', function(){
 
-  var bundler = browserify({entries: 'client/app/app.jsx', extensions: ['.jsx'], debug: true, cache: {}, packageCache: {}, fullPaths: true});
+  var bundler = browserify(bConfig);
   var watcher = watchify(bundler);
   console.log("running watcher");
 
@@ -24,4 +31,12 @@ gulp.task('default', function(){
   .pipe(source('production.js'))
   .pipe(gulp.dest('client/dist'));
 
+});
+
+gulp.task('browserify', function(){
+	return browserify(bConfig)
+	.transform('babelify', {presets: ["es2015", "react"]})
+	.bundle()
+	.pipe(source('production.js'))
+	.pipe(gulp.dest('client/dist'));
 });
