@@ -37,15 +37,15 @@ var Login = React.createClass({
               <div className="intro-message">
                 <h1>Reach Your Dreams</h1>
                 <hr className="intro-divider"/>
-                  <form role="form" onSubmit={this.authLoggedUser}>
-                    <div className="form-group">
-                      <h3>Login To Your Level Money Account Now</h3>
-                      <input type="text" placeholder="level@example.com" className="form-control" />
-                      <br />
-                      <input type="password" placeholder="password" className="form-control" />
-                    </div>
-                    <button type="submit" className="btn btn-block btn-success">Login</button>
-                  </form>
+                <form role="form" onSubmit={this.authLoggedUser}>
+                  <div className="form-group">
+                    <h3>Login To Your Level Money Account Now</h3>
+                    <input type="text" placeholder="level@example.com" className="form-control" />
+                    <br />
+                    <input type="password" placeholder="password" className="form-control" />
+                  </div>
+                  <button type="submit" className="btn btn-block btn-success">Login</button>
+                </form>
               </div>
             </div>
           </div>
