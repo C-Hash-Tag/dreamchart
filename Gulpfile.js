@@ -6,38 +6,40 @@ const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const watchify = require('watchify');
 const bConfig = {
-	entries: 'client/app/app.jsx',
-	extensions: ['.jsx'],
-	debug: true,
-	cache: {},
-	packageCache: {},
-	fullPaths: true
+    entries: 'client/app/app.jsx',
+    extensions: ['.jsx'],
+    debug: true,
+    cache: {},
+    packageCache: {},
+    fullPaths: true
 };
-gulp.task('default', function(){
 
-  var bundler = browserify(bConfig);
-  var watcher = watchify(bundler);
-  console.log("running watcher");
+gulp.task('default', function() {
 
-  return watcher.on('update', function() {
-    console.log('updating');
-    return watcher.transform("babelify", {presets: ["es2015", "react"]})
-    .bundle()
-    .pipe(source('production.js'))
-    .pipe(gulp.dest('client/dist'))
-  })
-  .transform("babelify", {presets: ["es2015", "react"]})
-  .bundle()
-  .pipe(source('production.js'))
-  .pipe(gulp.dest('client/dist'));
+    var b = browserify(bConfig);
+    b = watchify(b);
+    console.log("running watcher");
+
+    b.on('update', function() {
+        console.log('updating');
+        bundleShare(b);
+    });
+    b.on('log', function(msg){
+    	console.log(msg);
+    })
+    bundleShare(b);
 
 });
 
-gulp.task('browserify', function(){
-	return browserify(bConfig)
-	.transform('babelify', {presets: ["es2015", "react"]})
-	.bundle()
-	.pipe(source('production.js'))
-	.pipe(gulp.dest('client/dist'));
+gulp.task('browserify', function() {
+    return bundleShare(browserify(bConfig));
 });
 
+function bundleShare(b) {
+    b.transform('babelify', {
+            presets: ["es2015", "react"]
+        })
+        .bundle()
+        .pipe(source('production.js'))
+        .pipe(gulp.dest('client/dist'));
+}
