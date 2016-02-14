@@ -15,7 +15,7 @@ var Footer = React.createClass({
   render: function() {
 
     return (
-      <section id="footer" class="col-md-12">
+      <section id="footer" className="col-md-12">
         <div id="copyright">&copy;2016</div>
       </section>
     );
