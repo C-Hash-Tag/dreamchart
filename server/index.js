@@ -47,17 +47,17 @@ app.use(express.static(path.join(__dirname, "../client/dist")));
 //   });
 // });
 
-app.get('/json/posts/', function(req, res) {
-  fs.readFile("server/source_data/posts.json", function(err, data) {
-    res.send(data);
-  });
-});
+// app.get('/json/posts/', function(req, res) {
+//   fs.readFile("server/source_data/posts.json", function(err, data) {
+//     res.send(data);
+//   });
+// });
 
-app.get('/json/projects/', function(req, res) {
-  fs.readFile("server/source_data/projects.json", function(err, data) {
-    res.send(data);
-  });
-});
+// app.get('/json/projects/', function(req, res) {
+//   fs.readFile("server/source_data/projects.json", function(err, data) {
+//     res.send(data);
+//   });
+// });
 
 app.get("*", function(req, res) {
   res.render("index"); //everything else goes to the same template and is handled by Backbone.
