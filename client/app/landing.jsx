@@ -19,7 +19,7 @@ var Landing = React.createClass({
   render: function() {
 
     return (
-      <div> a simple div with some content</div>
+      <div> a simple div with some content222</div>
     );
   }
 });
