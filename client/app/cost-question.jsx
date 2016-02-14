@@ -51,9 +51,7 @@ var CostQuestion = React.createClass({
                   <div className="form-group">
                     <input type="text" className="form-control" value={this.state.goalCost} onChange={this.addCost} placeholder="Enter in USD"/>
                   </div>
-                  <div className="container">
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                  </div>
+                  <button type="submit" className="btn btn-block btn-success">Submit</button>
                 </form>
               </div>
             </div>

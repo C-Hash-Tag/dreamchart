@@ -149,6 +149,9 @@ var Results = React.createClass({
                   <div className="green"> Average Savings: {this.state.averageSaving} </div>
                   <div className="orange"> Months to Save: {this.state.monthsToSave} </div>
                 </div>
+                <div className="container">
+                  <button type="submit" className="btn btn-block btn-success">Increase Your Savings Now!</button>
+                </div>
               </div>
             </div>
           </div>

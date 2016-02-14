@@ -50,9 +50,7 @@ var Landing = React.createClass({
                     <h3>Enter the name of the item you want to own in a year:</h3>
                     <input type="text" className="form-control" value={this.state.goalName} onChange={this.addGoal}/>
                   </div>
-                  <div className="container">
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                  </div>
+                  <button type="submit" className="btn btn-block btn-success">Submit</button>
                 </form>
               </div>
             </div>
