@@ -21,10 +21,12 @@ var Login = React.createClass({
   authLoggedUser: function(event) {
     event.preventDefault();
     console.log("in authLoggedUser", event);
-    levelMoney.login(function(res){
-      console.log("in Login API", res)
+    // levelMoney.login(function(res){
+    //   console.log("in Login API", res)
 
-    });
+    // });
+    browserHistory.push('landing');
+
   },
   render: function() {
     return (
@@ -33,17 +35,15 @@ var Login = React.createClass({
           <div className="row">
             <div className="col-lg-12">
               <div className="intro-message">
-                <h1>Learn To Reach Your Dreams Faster</h1>
+                <h1>Reach Your Dreams</h1>
                 <hr className="intro-divider"/>
                   <form role="form" onSubmit={this.authLoggedUser}>
                     <div className="form-group">
-                      <h3>Login To Your Capital One Account To Get Started</h3>
+                      <h3>Login To Your Level Money Account Now</h3>
                       Account Login:    <input type="text" placeholder="level@example.com" className="form-control" />
                       Account Password: <input type="password" placeholder="password" className="form-control" />
                     </div>
-                    <div className="container">
-                      <button type="submit" className="btn btn-primary">Submit</button>
-                    </div>
+                    <button type="submit" className="btn btn-block btn-success">Login</button>
                   </form>
               </div>
             </div>
