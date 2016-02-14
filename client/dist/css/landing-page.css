@@ -30,13 +30,17 @@ h6 {
     font-weight: 400;
 }
 
+.bg {
+    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
 .intro-header {
     /*padding-top: 50%;  If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content!
     padding-bottom: 50%;*/
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
-    background-size: cover;
+
 }
 
 .intro-message {
@@ -140,12 +144,14 @@ h6 {
         float: left;
         margin-top: 15px;
     }
-    .intro-header{
-        padding: 50% 0;
-    }
 }
 
 @media(max-width:767px) {
+
+    .intro-header{
+        padding: 50% 0;
+    }
+
     .banner h2 {
         margin: 0;
         text-shadow: 2px 2px 3px rgba(0,0,0,0.6);

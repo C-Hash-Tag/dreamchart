@@ -60,10 +60,11 @@ var config = {
         tooltip: {
             formatter: function() {
                 var title = '';
+                var xDate = new Date(this.series.data[this.series.data.length-1].x);
                 if(this.x > new Date().getTime()){
-                    title = 'Projected'
+                    title = 'Projected - '+xDate.toDateString();
                 } else {
-                    title = new Date(this.x);
+                    title = new Date(this.x).toDateString();
                 }
                 return '<span style="font-size: 10px">'+title+'</span><br/>$'+this.y;
             },
@@ -94,9 +95,9 @@ var config = {
             zoneAxis: 'x',
             zones: [{value: new Date()},
             {
-            dashStyle: 'Dot',
+            dashStyle: 'Dash',
             fillColor: 'rgba(0,0,0,0)',
-            value: Date.UTC(2016,12,0)}],
+            value: Date.UTC(5000,12,0)}],
         }]
     };
 

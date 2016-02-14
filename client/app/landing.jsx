@@ -38,7 +38,7 @@ var Landing = React.createClass({
   render: function() {
 
     return (
-      <div className="intro-header" >
+      <div className="intro-header">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
