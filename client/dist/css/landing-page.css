@@ -183,3 +183,26 @@ footer {
 p.copyright {
     margin: 15px 0 0;
 }
+
+.status {
+    margin-top: 15px;
+}
+
+.blue {
+    color: white;
+    text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+}
+
+.green {
+    color: white;
+    text-shadow: -1px 0 green, 0 1px green, 1px 0 green, 0 -1px green;
+}
+
+.orange {
+    color: white;
+    text-shadow: -1px 0 orange, 0 1px orange, 1px 0 orange, 0 -1px orange;
+}
+
+.intro-message h1 {
+    text-shadow: -1px 0 gold, 0 1px gold, 1px 0 gold, 0 -1px gold;
+}
