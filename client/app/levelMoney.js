@@ -54,4 +54,22 @@ levelMoney.getProjection = function(callback) {
   xhr.send(JSON.stringify(args));
 }
 
+levelMoney.login = function(callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://prod-api.level-labs.com/api/v2/core/login", true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.onloadend = function() {
+      var parsed = JSON.parse(this.response);
+      callback(parsed);
+      var pretty = JSON.stringify(parsed, null, 2);
+      //document.getElementById('outrpc34').textContent = pretty;
+  };
+  xhr.onerror = function(err) {
+      document.getElementById('outrpc34').textContent = "ugh an error. i can't handle this right now.";
+  };
+  args = {"email":  "level@example.com", "password":  "incorrect_password", "args": {"uid":  1110881160, "token":  "A11D023136B7C79B1A323C7D3E3D9A55", "api-token":  "HackathonAPITokenDevweek4222"}};
+  xhr.send(JSON.stringify(args));
+};
+
 module.exports = levelMoney;
