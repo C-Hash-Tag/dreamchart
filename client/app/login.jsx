@@ -40,8 +40,9 @@ var Login = React.createClass({
                   <form role="form" onSubmit={this.authLoggedUser}>
                     <div className="form-group">
                       <h3>Login To Your Level Money Account Now</h3>
-                      Account Login:    <input type="text" placeholder="level@example.com" className="form-control" />
-                      Account Password: <input type="password" placeholder="password" className="form-control" />
+                      <input type="text" placeholder="level@example.com" className="form-control" />
+                      <br />
+                      <input type="password" placeholder="password" className="form-control" />
                     </div>
                     <button type="submit" className="btn btn-block btn-success">Login</button>
                   </form>
