@@ -23,7 +23,7 @@ DreamChart is a simple mobile application built to help people acheive their sav
 
 ## The DreamChart App
 
-![Dreamchart](http://ds-wright.com/images/dreamchart.png)
+![Dreamchart](http://ds-wright.com/images/projects/dreamchart.png)
 
 ## How to Install
 
